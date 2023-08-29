@@ -31,7 +31,7 @@ import connectToDatabases from './services/connectToDatabases';
 const PORT: string = process.env.PORT;
 
 connectToDatabases().then(() => {
-	console.log(colors.yellow('[server.ts] ') + colors.cyan('Starting the server ...'));
+	console.log(colors.yellow('[server.ts] ') + colors.cyan('Starting the server...'));
 
 	httpServer.listen(PORT, () => {
 		console.log(
