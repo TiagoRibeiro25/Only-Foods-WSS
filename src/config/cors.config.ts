@@ -11,7 +11,7 @@ import { CorsOptions } from 'cors';
  *
  * @see https://expressjs.com/en/resources/middleware/cors.html
  */
-const corsConfig: CorsOptions = {
+export const expressAppCorsConfig: CorsOptions = {
 	origin: (origin, callback) => {
 		if (process.env.NODE_ENV === 'production') {
 			if (!origin || origin === process.env.FRONTEND_URL) {
@@ -28,4 +28,11 @@ const corsConfig: CorsOptions = {
 	maxAge: 86400, // How long the results of a preflight request can be cached in a preflight result cache (in seconds)
 };
 
-export default corsConfig;
+/**
+ * CORS Configuration for Socket.IO
+ *
+ * This configuration will check if the origin of the request is the same as the frontend URL
+ */
+export const ioCorsConfig: CorsOptions = {
+	origin: process.env.FRONTEND_URL,
+};
