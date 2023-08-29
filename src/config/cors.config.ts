@@ -24,7 +24,6 @@ export const expressAppCorsConfig: CorsOptions = {
 			callback(null, true); // Allow all requests in development mode
 		}
 	},
-	credentials: true, // Enable sending and receiving cookies from the client-side
 	maxAge: 86400, // How long the results of a preflight request can be cached in a preflight result cache (in seconds)
 };
 
