@@ -13,6 +13,7 @@ console.log(
 
 // Load the environment variables from the .env file (development only)
 if (process.env.NODE_ENV !== 'production') {
+	// eslint-disable-next-line @typescript-eslint/no-var-requires
 	require('dotenv').config();
 }
 
@@ -25,12 +26,12 @@ if (!checkEnvs()) {
 	process.exit(1);
 }
 
-import app from './app';
+import { server } from './app';
 import connectToDatabases from './services/connectToDatabases';
 const PORT: string = process.env.PORT;
 
 connectToDatabases().then(() => {
-	app.listen(PORT, () => {
+	server.listen(PORT, () => {
 		console.log(
 			colors.yellow('[server.ts] ') +
 				colors.cyan('Server is running on port: ') +
