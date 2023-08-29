@@ -33,5 +33,5 @@ export const expressAppCorsConfig: CorsOptions = {
  * This configuration will check if the origin of the request is the same as the frontend URL
  */
 export const ioCorsConfig: CorsOptions = {
-	origin: process.env.FRONTEND_URL,
+	origin: process.env.NODE_ENV === 'production' ? process.env.FRONTEND_URL : '*',
 };

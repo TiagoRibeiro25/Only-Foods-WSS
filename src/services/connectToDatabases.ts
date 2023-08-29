@@ -2,6 +2,11 @@ import colors from 'colors';
 import mongo from '../config/mongoose.config';
 
 export default async function connectToDatabases(): Promise<void> {
+	console.log(
+		colors.yellow('[connectToDatabases.ts] ') +
+			colors.cyan('Connecting to the databases...'),
+	);
+
 	try {
 		// Connect to MongoDB
 		await mongo.connect();

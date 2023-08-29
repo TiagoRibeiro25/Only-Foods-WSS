@@ -26,12 +26,14 @@ if (!checkEnvs()) {
 	process.exit(1);
 }
 
-import { server } from './app';
+import { httpServer } from './app';
 import connectToDatabases from './services/connectToDatabases';
 const PORT: string = process.env.PORT;
 
 connectToDatabases().then(() => {
-	server.listen(PORT, () => {
+	console.log(colors.yellow('[server.ts] ') + colors.cyan('Starting the server ...'));
+
+	httpServer.listen(PORT, () => {
 		console.log(
 			colors.yellow('[server.ts] ') +
 				colors.cyan('Server is running on port: ') +
