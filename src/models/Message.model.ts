@@ -1,9 +1,9 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const MessageSchema = new mongoose.Schema({
 	room: {
 		type: mongoose.Schema.Types.ObjectId,
-		ref: "Room",
+		ref: 'Room',
 	},
 	user: {
 		type: Number,
@@ -15,4 +15,4 @@ const MessageSchema = new mongoose.Schema({
 	},
 });
 
-export default mongoose.model("Message", MessageSchema);
+export default mongoose.model('Message', MessageSchema);

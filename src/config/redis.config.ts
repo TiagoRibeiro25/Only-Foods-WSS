@@ -1,4 +1,4 @@
-import Redis from "ioredis";
+import Redis from 'ioredis';
 
 // Configure connection options with a timeout
 const connectionOptions = {
@@ -6,7 +6,7 @@ const connectionOptions = {
 		// Retry for a maximum of 5 times
 		if (times >= 5) {
 			// Throw an error after the maximum retries
-			throw new Error("Failed to connect to Redis after multiple attempts");
+			throw new Error('Failed to connect to Redis after multiple attempts');
 		}
 		// Retry after 1 second
 		return 1000;
@@ -18,8 +18,10 @@ const redis = new Redis({
 	host: process.env.REDIS_HOST,
 	port: parseInt(process.env.REDIS_PORT),
 	db: parseInt(process.env.REDIS_DB),
-	username: process.env.NODE_ENV === "production" ? process.env.REDIS_USERNAME : undefined,
-	password: process.env.NODE_ENV === "production" ? process.env.REDIS_PASSWORD : undefined,
+	username:
+		process.env.NODE_ENV === 'production' ? process.env.REDIS_USERNAME : undefined,
+	password:
+		process.env.NODE_ENV === 'production' ? process.env.REDIS_PASSWORD : undefined,
 	...connectionOptions,
 });
 

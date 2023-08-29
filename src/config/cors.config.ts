@@ -1,4 +1,4 @@
-import { CorsOptions } from "cors";
+import { CorsOptions } from 'cors';
 
 /**
  * CORS Configuration
@@ -13,12 +13,12 @@ import { CorsOptions } from "cors";
  */
 const corsConfig: CorsOptions = {
 	origin: (origin, callback) => {
-		if (process.env.NODE_ENV === "production") {
+		if (process.env.NODE_ENV === 'production') {
 			if (!origin || origin === process.env.FRONTEND_URL) {
 				callback(null, true); // Allow the request
 			} else {
-				console.log("origin: ", origin);
-				callback(new Error("Not allowed by CORS")); // Throw an error if origin doesn't match
+				console.log('origin: ', origin);
+				callback(new Error('Not allowed by CORS')); // Throw an error if origin doesn't match
 			}
 		} else {
 			callback(null, true); // Allow all requests in development mode

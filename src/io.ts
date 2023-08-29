@@ -1,9 +1,9 @@
-import { Server } from "socket.io";
-import app from "./app";
+import { Server } from 'socket.io';
+import app from './app';
 
 const io = new Server(app, {
 	cors: {
-		origin: "*",
+		origin: '*',
 	},
 });
 

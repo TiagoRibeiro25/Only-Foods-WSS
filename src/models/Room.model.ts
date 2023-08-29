@@ -1,10 +1,10 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const RoomSchema = new mongoose.Schema({
 	messages: [
 		{
 			type: mongoose.Schema.Types.ObjectId,
-			ref: "Message",
+			ref: 'Message',
 		},
 	],
 	users: [
@@ -15,4 +15,4 @@ const RoomSchema = new mongoose.Schema({
 	],
 });
 
-export default mongoose.model("Room", RoomSchema);
+export default mongoose.model('Room', RoomSchema);
