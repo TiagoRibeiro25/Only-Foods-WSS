@@ -21,3 +21,5 @@ io.on('connection', socket => {
 });
 
 export { httpServer, io };
+
+//TODO: Figure out why the handshake is not working
