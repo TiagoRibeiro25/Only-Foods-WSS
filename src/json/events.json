@@ -1,0 +1,30 @@
+[
+	{
+		"name": "get-rooms",
+		"description": "Get all the rooms where the user is"
+	},
+	{
+		"name": "create-room",
+		"description": "Create a room",
+		"data": {
+			"name": "string",
+			"userTargetId": "number",
+			"firstMessageContent": "string"
+		}
+	},
+	{
+		"name": "get-messages",
+		"description": "Get all the messages from a room",
+		"data": {
+			"roomId": "string"
+		}
+	},
+	{
+		"name": "send-message",
+		"description": "Send a message to a user",
+		"data": {
+			"roomId": "string",
+			"content": "string"
+		}
+	}
+]
