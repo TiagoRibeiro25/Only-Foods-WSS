@@ -1,5 +1,4 @@
 import { Socket } from 'socket.io';
-// import mongo from '../config/mongoose.config';
 import validateUser from './validateUser.event';
 
 const handleConnection = async (socket: Socket): Promise<void> => {
